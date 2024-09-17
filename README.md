@@ -1,10 +1,11 @@
 # Getting started with OP-TEE and Vuln
 
-## Prerequisites
-
-Source:
+Sources:
 
 - [official doc](https://optee.readthedocs.io/en/latest/building/prerequisites.html)
+- [vuln by teesec](https://github.com/teesec-research/optee_examples)
+
+## Prerequisites
 
 ### Start an **Ubuntu 24.04** VM or docker environment
 
