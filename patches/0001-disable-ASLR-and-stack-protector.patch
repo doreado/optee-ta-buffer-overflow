@@ -1,0 +1,34 @@
+From 32fccb1d0dddbc508f4ed46b6a791abcc39aab65 Mon Sep 17 00:00:00 2001
+From: Edoardo Manfredi <edoardom59@tutanota.com>
+Date: Tue, 17 Sep 2024 11:30:07 +0200
+Subject: [PATCH] disable ASLR and stack protector
+
+---
+ mk/config.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/mk/config.mk b/mk/config.mk
+index e21a1c0f2..298d44434 100644
+--- a/mk/config.mk
++++ b/mk/config.mk
+@@ -295,7 +295,7 @@ CFG_BUILD_IN_TREE_TA ?= y
+ # When this flag is enabled, the ELF loader will introduce a random offset
+ # when mapping the application in user space. ASLR makes the exploitation of
+ # memory corruption vulnerabilities more difficult.
+-CFG_TA_ASLR ?= y
++CFG_TA_ASLR ?= n
+ 
+ # How much ASLR may shift the base address (in pages). The base address is
+ # randomly shifted by an integer number of pages comprised between these two
+@@ -332,7 +332,7 @@ CFG_CORE_STACK_PROTECTOR_STRONG ?= y
+ CFG_CORE_STACK_PROTECTOR_ALL ?= n
+ # Stack Protection for TA
+ CFG_TA_STACK_PROTECTOR ?= n
+-CFG_TA_STACK_PROTECTOR_STRONG ?= y
++CFG_TA_STACK_PROTECTOR_STRONG ?= n
+ CFG_TA_STACK_PROTECTOR_ALL ?= n
+ 
+ _CFG_CORE_STACK_PROTECTOR := $(call cfg-one-enabled, CFG_CORE_STACK_PROTECTOR \
+-- 
+2.43.0
+
