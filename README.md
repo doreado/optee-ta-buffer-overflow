@@ -173,18 +173,24 @@ evil setpw
 evil get
 ```
 
+If the user provides the correct password, the secure console prints
+![image](https://github.com/user-attachments/assets/a5b5097f-381b-4ee2-9349-22b48465d49f)
+
 3. Get the secret (without the password) using the `vuln` command
 
 ```bash
 evil vuln
 ```
 
+This will print the following in the secure console
+![image](https://github.com/user-attachments/assets/9d61b313-37fc-450d-b34c-0392fd48fd41)
+
 ## On the attack success
 
 The attack may still fail, since OPTEE-OS might use a different load address
 from the default one. In this case, you can try to restart the VMs with `make
 run-only`; eventually the default one is picked. You can also modify the
-application to try the attack with both load base.
+application to try the attack with both load bases.
 The address of functions and `SECRET` that are assumed in `aes/host/rop1.h` may
 change when the TA is compiled. This is extremely likely, if the source is
 modified somehow. This will likely result in a crash in the TA due to a
